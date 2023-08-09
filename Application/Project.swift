@@ -10,7 +10,7 @@ let project = Project(
             name: "PlanIt-iOS",
             platform: .iOS,
             product: .app,
-            bundleId: "$(APP_BUNDLE_ID)",
+            bundleId: "com.nodoubt.PlanIt-iOS",
             deploymentTarget: .iOS(
                 targetVersion: "15.0",
                 devices: .iphone
