@@ -6,5 +6,6 @@ let project = Project.framework(
     platform: .iOS,
     dependencies: [
         .Module.EmptyModule
-    ]
+    ],
+    scripts: [.removeStaticFrameworksScripts]
 )

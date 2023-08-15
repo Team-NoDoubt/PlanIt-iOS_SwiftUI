@@ -5,8 +5,8 @@ extension Project {
         name: String,
         platform: Platform = .iOS,
         infoPlist: InfoPlist = .default,
-        dependencies: [TargetDependency]
-        
+        dependencies: [TargetDependency],
+        scripts: [TargetScript] = [.swiftLintScript, .removeStaticFrameworksScripts]
     ) -> Project {
         return Project(
             name: name,
@@ -23,10 +23,7 @@ extension Project {
                     ),
                     infoPlist: infoPlist,
                     sources: ["Sources/**"],
-                    scripts: [
-                        .swiftLintScript,
-                        .removeStaticFrameworksScripts
-                    ],
+                    scripts: scripts,
                     dependencies: dependencies
                 )
             ]
