@@ -15,7 +15,7 @@ public struct PlanItTextField: View {
         placeholder: String = "",
         isDisabled: Bool = false,
         isSecure: Bool = false,
-        borderColor: Color = Color.GrayScale.gray400,
+        borderColor: Color = Color.GrayScale.gray300,
         height: CGFloat = 50
     ) {
         self.title = title
@@ -42,7 +42,7 @@ public struct PlanItTextField: View {
                     .padding(.vertical)
                     .padding(.horizontal)
                     .background(
-                        RoundedRectangle(cornerRadius: 4, style: .continuous)
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
                             .stroke(borderColor, lineWidth: 1)
                     )
                     .frame(height: height)
