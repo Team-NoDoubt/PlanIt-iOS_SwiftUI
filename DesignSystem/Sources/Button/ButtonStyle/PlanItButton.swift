@@ -40,7 +40,6 @@ public struct PlanItButton: View {
                 Spacer()
             }
         }).style(style, color: color)
-            .frame(minHeight: 10)
     }
 }
 
