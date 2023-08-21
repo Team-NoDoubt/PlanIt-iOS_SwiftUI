@@ -5,7 +5,8 @@ struct ContentView: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            LoginView(viewModel: LoginViewModel())
+//            LoginView(viewModel: LoginViewModel())
+            MainView()
         }
     }
 }
