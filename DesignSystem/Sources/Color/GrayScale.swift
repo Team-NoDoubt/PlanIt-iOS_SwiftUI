@@ -5,6 +5,7 @@ public extension Color {
 }
 // MARK: - GrayScale
 public extension Color.GrayScale {
+    static let gray10: Color = #colorLiteral(red: 0.9891149402, green: 0.9841482043, blue: 0.9799281955, alpha: 1).color
     static let gray50:  Color = #colorLiteral(red: 0.9843137255, green: 0.9843137255, blue: 0.9843137255, alpha: 1).color
     static let gray100: Color = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1).color
     static let gray200: Color = #colorLiteral(red: 0.9176470588, green: 0.9058823529, blue: 0.9333333333, alpha: 1).color
