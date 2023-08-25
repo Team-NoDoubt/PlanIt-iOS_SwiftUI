@@ -4,6 +4,7 @@ import PlanItDS
 struct MainView: View {
 
     init() {
+
         UITabBar.appearance().backgroundColor = .init(Color.GrayScale.gray50)
     }
 
