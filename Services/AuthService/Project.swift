@@ -6,5 +6,6 @@ let project = Project.framework(
     dependencies: [
         .SPM.RxSwift,
         .SPM.Moya,
-        .SPM.RxMoya
+        .SPM.RxMoya,
+        .Module.APIModule
     ])
