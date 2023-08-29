@@ -2,7 +2,7 @@ import ProjectDescription
 
 extension TargetDependency {
     public struct Module {
-        public static let APIModule = module(name: "APIModule")
+        public static let APIModule = module(name: "BaseModule")
         
     }
     private static func module(name: String) -> TargetDependency {
