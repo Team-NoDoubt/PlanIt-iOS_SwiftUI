@@ -11,6 +11,5 @@ struct TimeTableView: View {
                 }
             }
         }
-        
     }
 }
