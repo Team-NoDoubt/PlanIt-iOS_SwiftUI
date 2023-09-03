@@ -5,6 +5,7 @@ let project = Project.framework(
     name: "BaseModule",
     platform: .iOS,
     dependencies: [
-        .SPM.Moya
+        .SPM.Moya,
+        .Service.AuthService
     ]
 )

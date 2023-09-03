@@ -7,6 +7,6 @@ let project = Project.framework(
         .SPM.RxSwift,
         .SPM.Moya,
         .SPM.RxMoya,
-        .Module.APIModule,
-        .SPM.KeychainSwift
+        .SPM.KeychainSwift,
+        .Module.DateModule
     ])
