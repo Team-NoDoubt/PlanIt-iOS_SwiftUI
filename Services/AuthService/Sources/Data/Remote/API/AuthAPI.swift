@@ -3,6 +3,7 @@ import Foundation
 
 enum AuthAPI: TargetType {
     case signin(request: SigninRequest)
+    case refreshToken(refreshToken: String)
 }
 
 extension AuthAPI {
@@ -14,6 +15,8 @@ extension AuthAPI {
         switch self {
         case .signin:
             return "/user/auth"
+        case .refreshToken:
+            return "user/token"
         }
     }
 
@@ -21,6 +24,8 @@ extension AuthAPI {
         switch self {
         case .signin:
             return .post
+        case .refreshToken:
+            return .put
         }
     }
 
@@ -28,6 +33,8 @@ extension AuthAPI {
         switch self {
         case .signin(let request):
             return .requestJSONEncodable(request)
+        default:
+            return .requestPlain
         }
     }
 
@@ -37,7 +44,8 @@ extension AuthAPI {
 
     var headers: [String : String]? {
         switch self {
-            
+        case .refreshToken(let refreshToken):
+                   return ["Refresh-Token": "Bearer \(refreshToken)", "Contect-Type": "application/json"]
         default:
             return nil
         }
