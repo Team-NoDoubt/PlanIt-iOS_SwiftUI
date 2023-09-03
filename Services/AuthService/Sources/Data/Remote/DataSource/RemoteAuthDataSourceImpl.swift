@@ -4,6 +4,7 @@ import RxMoya
 import RxSwift
 
 class RemoteAuthDataSourceImpl: RemoteAuthDataSource {
+    
 
     private let provider = MoyaProvider<AuthAPI>()
 
@@ -11,4 +12,10 @@ class RemoteAuthDataSourceImpl: RemoteAuthDataSource {
         self.provider.rx.request(.signin(request: signinRequest))
             .map(SigninTokenResponse.self)
     }
+    
+    func refreshToken(refreshToken: String) -> Single<SigninTokenResponse> {
+        self.provider.rx.request(.refreshToken(refreshToken: refreshToken))
+            .map(SigninTokenResponse.self)
+    }
+    
 }
