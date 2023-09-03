@@ -1,7 +1,8 @@
 import Moya
 import Foundation
+import AuthService
 
-public protocol PlanItAPI: TargetType {
+public protocol PlanItAPI: TargetType, JWTTokenAuthorizable {
     var domain: String { get }
     var urlPath: String { get }
     var errorMap: [Int: Error] { get }
