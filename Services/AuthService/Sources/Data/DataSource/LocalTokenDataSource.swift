@@ -6,5 +6,6 @@ protocol LocalTokenDataSource {
     func registerRefreshToken(_ refreshToken: String)
     func fetchRefreshToken() -> String?
     func registerExpiredAt(_ expiredAt: String)
+    func fetchExpiredDate() -> Date?
     func resetToken()
 }

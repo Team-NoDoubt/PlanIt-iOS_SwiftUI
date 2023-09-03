@@ -1,5 +1,5 @@
 import Foundation
-import Security
+import DateModule
 
 
 class LocalTokenDataSourceImpl: LocalTokenDataSource {
@@ -25,6 +25,11 @@ class LocalTokenDataSourceImpl: LocalTokenDataSource {
 
     func registerExpiredAt(_ expiredAt: String) {
         self.keychain.set(expiredAt, forKey: .expiredAt)
+    }
+    
+    func fetchExpiredDate() -> Date? {
+        self.keychain.get(.expiredAt)?
+            .toDate(format: .fullDateWithMilliSecondTime)
     }
 
 
