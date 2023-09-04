@@ -6,5 +6,7 @@ let project = Project.framework(
     dependencies: [
         .SPM.RxSwift,
         .SPM.Moya,
-        .SPM.RxMoya
+        .SPM.RxMoya,
+        .SPM.KeychainSwift,
+        .Module.DateModule
     ])

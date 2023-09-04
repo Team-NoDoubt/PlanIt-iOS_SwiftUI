@@ -2,9 +2,10 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.framework(
-    name: "EmptyModule",
+    name: "TimeTableService",
     dependencies: [
         .SPM.RxSwift,
-        .SPM.KeychainSwift
+        .SPM.RxMoya,
+        .Module.APIModule
     ]
 )

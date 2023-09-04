@@ -2,9 +2,10 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.framework(
-    name: "PlanItDS",
+    name: "BaseModule",
     platform: .iOS,
     dependencies: [
-    ],
-    scripts: [.removeStaticFrameworksScripts]
+        .SPM.Moya,
+        .Service.AuthService
+    ]
 )
