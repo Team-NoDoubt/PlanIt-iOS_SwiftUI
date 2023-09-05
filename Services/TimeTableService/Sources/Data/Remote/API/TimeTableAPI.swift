@@ -1,9 +1,10 @@
 import Moya
 import Foundation
 import BaseModule
+import AuthService
 
 enum TimeTableAPI {
-    case fetchTimeTable(grade: Int, classNum: Int)
+    case fetchTimeTableListForWeek(grade: Int, classNum: Int)
 }
 
 extension TimeTableAPI: PlanItAPI {
@@ -14,7 +15,7 @@ extension TimeTableAPI: PlanItAPI {
     
     var urlPath: String {
         switch self {
-        case .fetchTimeTable:
+        case .fetchTimeTableListForWeek:
             return ""
         }
     }
@@ -29,7 +30,7 @@ extension TimeTableAPI: PlanItAPI {
 
     var task: Task {
         switch self {
-        case .fetchTimeTable(let grade, let classNum):
+        case .fetchTimeTableListForWeek(let grade, let classNum):
             return .requestParameters(parameters:
                                         [
                                             "grade": grade,
@@ -37,4 +38,9 @@ extension TimeTableAPI: PlanItAPI {
                                         ], encoding: URLEncoding.queryString)
         }
     }
+
+    var jwtTokenType: JWTTokenType {
+        return .none
+    }
+
 }
