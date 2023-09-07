@@ -42,7 +42,7 @@ extension AuthAPI {
         return .successCodes
     }
 
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         switch self {
         case .refreshToken(let refreshToken):
                    return ["Refresh-Token": "Bearer \(refreshToken)", "Contect-Type": "application/json"]
