@@ -10,7 +10,7 @@ struct MainView: View {
 
     var body: some View {
         TabView {
-            TimeTableView()
+            TimeTableView(viewModel: TimeTableViewModel())
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("시간표")
