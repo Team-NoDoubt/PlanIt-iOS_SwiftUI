@@ -6,6 +6,9 @@ class LocalTokenDataSourceImpl: LocalTokenDataSource {
 
     let keychain = KeychainImpl<KeychainTokenType>()
 
+    init() {
+        keychain.accessGroup = "5G56CAU886.com.nodoubt.PlanIt-iOS.keychainGroup"
+    }
 
     func registerAccessToken(_ accessToken: String) {
         self.keychain.set(accessToken, forKey: .accessToken)
