@@ -20,7 +20,8 @@ let project = Project(
             resources: ["Resources/**"],
             scripts: [.swiftLintScript],
             dependencies: [
-                .DesignSystem.PlanItDesignSystem
+                .DesignSystem.PlanItDesignSystem,
+                .Service.TimeTableService
             ])
     ]
 )

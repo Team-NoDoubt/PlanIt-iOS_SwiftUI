@@ -1,5 +1,6 @@
 import SwiftUI
 import PlanItDS
+import TimeTableService
 
 struct MainView: View {
 
@@ -9,8 +10,11 @@ struct MainView: View {
     }
 
     var body: some View {
+
         TabView {
-            TimeTableView(viewModel: TimeTableViewModel())
+            TimeTableView(viewModel: TimeTableViewModel(
+                fetchTimeTableUsecase: TimeTableServiceDependency.shared.fetchTimeTableListUseCase
+            ))
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("시간표")
