@@ -10,10 +10,11 @@ struct TimeTableResponse: Decodable {
     enum CodingKeys: String, CodingKey {
         case grade
         case classNum = "class_num"
-        case period
+        case peroid
         case weekOfDate = "week_of_date"
         case subject
     }
+
 }
 
 extension TimeTableResponse {
