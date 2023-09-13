@@ -2,24 +2,27 @@ import Foundation
 
 public struct TimeTableServiceDependency {
 
-    public static let shared = Self.shared()
+    public static let shared = Self.resolve()
 
-    public let fetchTimeTableUseCase: FetchTimeTableUseCase
+    public let fetchTimeTableListUseCase: FetchTimeTableUseCase
 }
 
 extension TimeTableServiceDependency {
 
-    static func shared() -> TimeTableServiceDependency {
+    static func resolve() -> TimeTableServiceDependency {
 
         let remoteTimeTableDataSource = RemoteTimeTableDataSourceImpl()
         let repository: TimeTableRepository =  TimeTableRepositoryImpl(
             remoteDataSource: remoteTimeTableDataSource
         )
 
-        let fetchTimeTableUseCase = FetchTimeTableUseCase(
+        // MARK: - UseCases
+        let fetchTimeTableListUseCase = FetchTimeTableUseCase(
             repository: repository
         )
 
-        return .init(fetchTimeTableUseCase: fetchTimeTableUseCase)
+        return .init(
+            fetchTimeTableListUseCase: fetchTimeTableListUseCase
+        )
     }
 }
