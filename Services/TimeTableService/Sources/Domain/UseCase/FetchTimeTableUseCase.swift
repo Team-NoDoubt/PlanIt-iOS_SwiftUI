@@ -10,5 +10,6 @@ public class FetchTimeTableUseCase {
 
     public func excute(grade: Int, classNum: Int) -> Observable<[TimeTableEntity]> {
         return repository.fetchTimeTableListForWeek(grade: grade, classNum: classNum)
+        
     }
 }

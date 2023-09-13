@@ -11,7 +11,7 @@ public enum TimeTableError: Error {
 }
 
 public extension Error {
-    var TimeTableError: TimeTableError? {
+    var timetableError: TimeTableError? {
         self as? TimeTableError
     }
 }

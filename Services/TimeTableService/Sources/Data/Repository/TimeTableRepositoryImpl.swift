@@ -4,9 +4,9 @@ import Moya
 
 class TimeTableRepositoryImpl: TimeTableRepository {
     
-    let remoteDataSource: ReomteTimeTableDataSource
+    let remoteDataSource: RemoteTimeTableDataSource
 
-    init(remoteDataSource: ReomteTimeTableDataSource) {
+    init(remoteDataSource: RemoteTimeTableDataSource) {
         self.remoteDataSource = remoteDataSource
     }
     
